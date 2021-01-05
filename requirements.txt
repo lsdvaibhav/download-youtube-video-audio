@@ -1,0 +1,5 @@
+flask
+gunicorn
+pafy
+youtube_dl
+os
