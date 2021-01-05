@@ -2,7 +2,6 @@ from flask import Flask , render_template ,request ,send_from_directory , send_f
 
 # import pafy to use its methods
 import pafy
-import os
 
 app = Flask(__name__)
 
@@ -17,7 +16,7 @@ def video():
         try:
             video = request.form["video"]
             pafy.new(url).getbest().download('your-file-name.mp4')
-            return send_from_directory(os.path.dirname(app.instance_path),filename='your-file-name.mp4',as_attachment=True)
+            return send_from_directory(app.instance_path,filename='your-file-name.mp4',as_attachment=True)
         except :
             pass
     
